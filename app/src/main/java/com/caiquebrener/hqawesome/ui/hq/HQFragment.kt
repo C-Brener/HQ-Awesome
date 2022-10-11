@@ -5,17 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.caiquebrener.hqawesome.R
+import com.caiquebrener.hqawesome.data.actions.HQItemListener
 import com.caiquebrener.hqawesome.placeholder.PlaceholderContent
 import com.caiquebrener.hqawesome.ui.hq.recyclerview.MyHQRecyclerViewAdapter
 import com.caiquebrener.hqawesome.ui.viewmodel.HQViewModel
 
 
-class HQFragment : Fragment() {
+class HQFragment : Fragment(), HQItemListener {
 
     private val viewModel by navGraphViewModels<HQViewModel>(R.id.nav_graph) { defaultViewModelProviderFactory }
 
@@ -42,12 +44,15 @@ class HQFragment : Fragment() {
                     columnCount <= 1 -> LinearLayoutManager(context)
                     else -> GridLayoutManager(context, columnCount)
                 }
-                adapter = MyHQRecyclerViewAdapter(PlaceholderContent.ITEMS)
+                adapter = MyHQRecyclerViewAdapter(PlaceholderContent.ITEMS, this@HQFragment)
             }
         }
         return view
     }
 
+    override fun onItemSelected(position: Int) {
+        findNavController().navigate(R.id.HQDetails)
+    }
     companion object {
 
         // TODO: Customize parameter argument names
@@ -62,4 +67,6 @@ class HQFragment : Fragment() {
                 }
             }
     }
+
+
 }
