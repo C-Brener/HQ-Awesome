@@ -27,15 +27,13 @@ class MyHQRecyclerViewAdapter(
 
     override fun onBindViewHolder(holder: MyHQViewHolder, position: Int) {
         val item = values[position]
-        holder.idView.text = item.id
-        holder.contentView.text = item.content
+        holder.bindItem(item)
         holder.view.setOnClickListener {
             listener.onItemSelected(position)
         }
-
     }
 
-    override fun getItemCount(): Int = values.size
 
+    override fun getItemCount(): Int = values.size
 
 }

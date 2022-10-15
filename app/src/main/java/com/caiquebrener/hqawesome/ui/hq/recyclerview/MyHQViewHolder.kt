@@ -1,16 +1,16 @@
 package com.caiquebrener.hqawesome.ui.hq.recyclerview
 
-import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.caiquebrener.hqawesome.databinding.FragmentItemBinding
+import com.caiquebrener.hqawesome.placeholder.PlaceholderContent
 
-class MyHQViewHolder(binding: FragmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
-    val view: View = binding.root
-    val idView: TextView = binding.titleItem
-    val contentView: TextView = binding.contentItem
+class MyHQViewHolder(val binding: FragmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    val view = binding.root
+    fun bindItem(item: PlaceholderContent.PlaceholderItem) {
+        binding.hqItem = item
+        binding.executePendingBindings()
 
-    override fun toString(): String {
-        return super.toString() + " '" + contentView.text + "'"
+//        Execute pendindg bind executa a atualização do binding em tempo real impedindo que os dados fiquem atrasados ou incorretos
+
     }
 }

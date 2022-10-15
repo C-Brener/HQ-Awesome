@@ -23,12 +23,8 @@ o
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 P
  app/src/main/AndroidManifest.xml,8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e
-~
-Napp/src/main/java/com/caiquebrener/hqawesome/placeholder/PlaceholderContent.kt,9/f/9f17d5bd0a97ea5d8d3ff80d5c04e1e1fa58c1bc
 o
 ?app/src/main/java/com/caiquebrener/hqawesome/ui/MainActivity.kt,c/f/cf7c4ffe90e454e1c972dc171ad499a990ef6da3
-x
-Happ/src/main/java/com/caiquebrener/hqawesome/ui/viewmodel/HQViewModel.kt,9/8/987635aab7754a3681de1b5228fe6c96743c2c60
 :
 
 .gitignore,a/5/a5cc2925ca8258af241be7e5b0381edf30266302
