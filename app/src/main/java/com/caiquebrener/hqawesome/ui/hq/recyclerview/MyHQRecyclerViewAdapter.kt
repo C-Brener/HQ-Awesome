@@ -9,9 +9,10 @@ import com.caiquebrener.hqawesome.placeholder.PlaceholderContent.PlaceholderItem
 
 
 class MyHQRecyclerViewAdapter(
-    private val values: List<PlaceholderItem>,
     private val listener: HQItemListener
 ) : RecyclerView.Adapter<MyHQViewHolder>() {
+
+    private val values: MutableList<PlaceholderItem> = ArrayList<PlaceholderItem>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHQViewHolder {
 
@@ -36,4 +37,10 @@ class MyHQRecyclerViewAdapter(
 
     override fun getItemCount(): Int = values.size
 
+
+    fun updateData(hqList:List<PlaceholderItem>){
+        values.clear()
+        values.addAll(hqList)
+        notifyDataSetChanged()
+    }
 }
